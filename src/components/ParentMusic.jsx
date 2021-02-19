@@ -1,41 +1,19 @@
 import React, { Component } from 'react'
-
 class ParentMusic extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      newName: '',
-      newNumber: 0
-    }
-  }
-
   onChange = event => {
     const { value } = event.target
-    this.setState({
-      newName: value
-    })
-
-    const name = this.state.newName
-
-    this.props.editName(name)
+    this.props.editName(value)
   }
 
   levelUp = () => {
-    this.setState({
-      newNumber: this.state.newNumber + 1
-    })
-
-    this.props.editNumber(this.state.newNumber)
+    this.props.editNumber(this.props.number + 1)
   }
 
   render () {
     return (
       <>
-        <p>Hưng yêu {this.state.newName}</p>
-        <input type="text" value={this.state.newName} onChange={this.onChange} />
+        <input type="text" value={this.props.name} onChange={this.onChange} />
         <button onClick={this.levelUp}>tăng</button>
-        <p>total: {this.state.newNumber}</p>
       </>
     )
   }

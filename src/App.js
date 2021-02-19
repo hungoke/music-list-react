@@ -21,6 +21,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <p>hưng yêu {this.state.name}</p>
+        <p>total: {this.state.number}</p>
         <ParentMusic name={this.state.name} editNumber={this.editNewNumber} number={this.state.number} editName={this.editNewName}/>
       </div>
     )
